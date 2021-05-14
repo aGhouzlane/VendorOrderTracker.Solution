@@ -32,22 +32,18 @@ namespace VendorOrderTracker.Models
       Id = vendors.Count;
       Orders = new List<Order> { };
     }
-
     public static void ClearAll()
     {
       vendors.Clear();
     }
-
     public static List<Vendor> GetAll()
     {
       return vendors;
     }
-
     public static Vendor Find(int searchId)
     {
       return vendors[searchId - 1];
     }
-
     public void AddOrder(Order order)
     {
       Orders.Add(order);
