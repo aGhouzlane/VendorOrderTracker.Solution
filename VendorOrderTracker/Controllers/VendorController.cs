@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
 {
@@ -21,7 +21,7 @@ namespace VendorOrderTracker.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string firstName, string lastName, Address address, string description)
+    public ActionResult Create(string firstName, string lastName, string address, string description)
     {
       Vendor vendor = new Vendor(firstName, lastName, address, description);
       return RedirectToAction("Index");
@@ -32,23 +32,23 @@ namespace VendorOrderTracker.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
-      List<Item> vendorOrder = selectedVendor.Orders;
+      List<Order> vendorOrder = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
-      model.Add("order", vendorOrder);
+      model.Add("orders", vendorOrder);
       return View(model);
     }
 
     [HttpPost("/vendors/{vendorId}/Orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderQuantity,
-    float orderPrice, DateTime OrderDateTime)
+    float orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderTitle, orderDescription, orderQuantity, orderPrice, OrderDateTime);
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderQuantity, orderPrice);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
-      model.Add("vendors", foundVendor);
+      model.Add("vendor", foundVendor);
       return View("Show", model);
     }
   }
