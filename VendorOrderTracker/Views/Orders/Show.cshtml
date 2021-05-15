@@ -1,0 +1,11 @@
+<h1>Order Details: </h1>
+
+<h2>@Model["order"].Title</h2>
+<h2>@Model["order"].Description</h2>
+<h2>@Model["order"].Quantity</h2>
+<h2>@Model["order"].Price</h2>
+<h3>Vendor First Name: @Model["Vendor"].FirstName</h3>
+<h3>Vendor Last Name: @Model["Vendor"].LastName</h3>
+
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+<a href='/vendors'>View all Vendors</a>
