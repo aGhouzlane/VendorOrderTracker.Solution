@@ -8,9 +8,9 @@
 - _CSS_ 🎨
 - _Bootstrap_ 🥾
 - _C#_ #️⃣
-- _.NET Core 5.0
-- _Razor
-- _MSTest
+- _.NET Core 5.0_
+- _Razor_
+- _MSTest_
 
 ## Description 📜
 
