@@ -14,7 +14,7 @@
 
 ## Description 📜
 
-\_A web application that allows users to add vendors, orders to vendors, and display vendor's order details. The application uses the MVC design pattern and makes HttpGet/HttpPost requests/responses.
+\_A web application that allows users to add vendors, orders to vendors, and displays vendor's order details. The application uses the MVC design pattern and makes HttpGet/HttpPost requests/responses.
 
 
 ## Setup/Installation Requirements 🏗
