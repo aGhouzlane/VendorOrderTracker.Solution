@@ -8,7 +8,7 @@ namespace VendorOrderTracker.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public int Quantity { get; set; }
-    public float Price { get; set; }
+    public double Price { get; set; }
     private static List<Order> orders = new List<Order> { };
     public Order(string title, string description, int quantity, float price)
     {
